@@ -34,9 +34,10 @@ export default function App() {
   const [interactionOccurred, setInteractionOccurred] = useState(false);
   const channelRef = useRef([]);
   const [isProcessing, setIsProcessing] = useState(false);
+  const numberOfEntries = 10;
 
   useEffect(() => {
-    channelRef.current = Array(5)
+    channelRef.current = Array(numberOfEntries)
       .fill()
       .map((_, i) => channelRef.current[i] || React.createRef());
   }, []);
@@ -358,7 +359,7 @@ export default function App() {
           )}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
-          {[...Array(5)].map((_, i) => (
+          {[...Array(numberOfEntries)].map((_, i) => (
             <div className="p-4 bg-gray-800 rounded-lg flex flex-col items-center text-nowrap ">
               <input
                 type="text"
